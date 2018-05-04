@@ -1,21 +1,22 @@
 const loadEx = require('./ex');
-const writeEx = require('./dom');
+const loadLocations = require('./locations');
+const writeToDom = require('./dom');
 
 const whenExLoads = (data) => {
-  $('#ex-container').append(writeEx(data.ex));
+  $('#ex-container').append(writeToDom.writeEx(data.ex));
 };
 
 const whenCallFails = (error) => {
   console.error('Error!: ', error);
 };
 
-// const whenLocationsLoad = () => {
-
-// };
+const whenLocationsLoad = (data) => {
+  $('#location-container').append(writeToDom.writeLocations(data.locations));
+};
 
 const initializer = () => {
   loadEx(whenExLoads, whenCallFails);
-  // loadLocations(whenLocationsLoad, whenCallFails);
+  loadLocations(whenLocationsLoad, whenCallFails);
 };
 
 module.exports = initializer;
