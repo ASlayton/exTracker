@@ -1,0 +1,12 @@
+{
+  "ex": {
+    "imageURL": "/images/tad.jpg",
+    "name": "Tad Lickspittle",
+    "age": 32,
+    "flaws": [
+      "Likes to stop walking suddenly when you are following him",
+      "Steals the covers",
+      "Wears slippers outdoors and sneakers while inside"
+    ]
+  }
+}
