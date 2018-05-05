@@ -13,3 +13,12 @@ img {
 .location-card > div > img {
   height: 100px;
 }
+
+#filter-button-container {
+  margin-bottom: 10px;
+  clear: both;
+}
+
+#location-container {
+  margin-top: 40px;
+}
