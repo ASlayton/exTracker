@@ -23,14 +23,15 @@ const writeLocations = (data) => {
   console.log(data);
   let domString = '';
   data.forEach(element => {
-    domString += `<div class="panel panel-default location-card">`;
+    domString += `<div class="panel panel-default location-card ${element.time}">`;
     domString +=   `<div class="panel-body">`;
-    domString +=     `<img src="${element.imageURL}" class="col-sm-2">`;
-    domString +=     `<div class="info-container">`;
+    domString +=     `<img src="${element.imageURL}" class="col-sm-3">`;
+    domString +=     `<div class="info-container col-sm-9">`;
     domString +=       `<h4>${element.name}<h4>`;
-    domString +=       `<p>${element.address}</p>`;
+    domString +=       `<p>${element.address1}</p>`;
+    domString +=       `<p>${element.address2}</p>`;
     domString +=       `<p>${element.time}</p>`;
-    domString +=       `</div>`;
+    domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
   });
