@@ -1,6 +1,7 @@
 const loadEx = require('./ex');
 const loadLocations = require('./locations');
 const writeToDom = require('./dom');
+const events = require('./events');
 
 const whenExLoads = (data) => {
   $('#ex-container').append(writeToDom.writeEx(data.ex));
@@ -17,6 +18,7 @@ const whenLocationsLoad = (data) => {
 const initializer = () => {
   loadEx(whenExLoads, whenCallFails);
   loadLocations(whenLocationsLoad, whenCallFails);
+  events.bindEvents();
 };
 
 module.exports = initializer;

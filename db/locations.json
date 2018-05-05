@@ -3,74 +3,86 @@
     {
 			"imageURL": "https://s3-media4.fl.yelpcdn.com/bphoto/1cJ7x4OeW1SEp9NWvthnsw/348s.jpg",
 			"name": "McDonald's",
-			"address": " 126 N Mt Juliet Rd, Mt Juliet, TN 37122",
-			"time": "afternoon"
+			"address1": "126 N Mt Juliet Rd,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Midday"
 		},
 		{
 			"imageURL": "https://s3-media3.fl.yelpcdn.com/bphoto/D1Znzqf3hhhL6g3mMJa8Zg/ls.jpg",
 			"name": "Starbucks",
-			"address": "11309 Lebanon Rd, Mt Juliet, TN 37122",
-			"time": "morning"
+			"address1": "11309 Lebanon Rd,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Dawn"
 		},
 		{
 			"imageURL": "http://hosted.where2getit.com/walmart/images/claiming/WalmartSupercenter_other.png",
 			"name": "Walmart",
-			"address": "300 Pleasant Grove Rd Ste 600, Mt Juliet, TN 37122",
-			"time": "evening"
+			"address1": "300 Pleasant Grove Rd Ste 600,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Dusk"
 		},
 		{
 			"imageURL": "http://www.smeinc.com/wp-content/uploads/2017/08/Feintool-2.jpg",
 			"name": "Feintool",
-			"address": "2930 Old Franklin Rd, Antioch, TN 37013",
-			"time": "morning"
+			"address1": "2930 Old Franklin Rd,",
+			"address2": "Antioch, TN 37013",
+			"time": "Dawn"
 		},
 		{
 			"imageURL": "http://www.lebanondemocrat.com/image/2016/06/25/x700_q30/kroger-JPG.jpg",
 			"name": "Kroger",
-			"address": "Providence Marketplace 401 S Mt Juliet Rd Ste 200",
-			"time": "afternoon"
+			"address1": "401 S Mt Juliet Rd Ste 200",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Midday"
 		},
 		{
 			"imageURL": "https://geo0.ggpht.com/cbk?panoid=04nByE29gNte3hRd6G6PoQ&output=thumbnail&cb_client=search.LOCAL_UNIVERSAL.gps&thumb=2&w=138&h=79&yaw=122.65619&pitch=0&thumbfov=100",
 			"name": "Chedder's",
-			"address": "50 Old Pleasant Grove Rd, Mt Juliet, TN 37122",
-			"time": "evening"
+			"address1": "50 Old Pleasant Grove Rd,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Dusk"
 		},
 		{
 			"imageURL": "https://lh5.googleusercontent.com/p/AF1QipPqRCDC0VOzZYze-zgDPxsNdR92cuC40ejz9Kl0=w160-h160-k-no",
 			"name": "Culver's",
-			"address": "35 Old Pleasant Grove Rd, Mt Juliet, TN 37122",
-			"time": "afternoon"
+			"address1": "35 Old Pleasant Grove Rd,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Midday"
 		},
 		{
 			"imageURL": "https://geo2.ggpht.com/cbk?panoid=HMI4c8qTxpeKjBSaWLig2Q&output=thumbnail&cb_client=search.LOCAL_UNIVERSAL.gps&thumb=2&w=138&h=79&yaw=106.956276&pitch=0&thumbfov=100",
 			"name": "Legato Gelato",
-			"address": "1200 Villa Pl #113, Nashville, TN 37212",
-			"time": "evening"
+			"address1": "1200 Villa Pl #113,",
+			"address2": "Nashville, TN 37212",
+			"time": "Dusk"
 		},
 		{
 			"imageURL": "https://lh5.googleusercontent.com/p/AF1QipMuJ18-rP23QZ6UgTgufpTuKk75HFto_bkefxT2=w213-h160-k-no",
 			"name": "GameStop",
-			"address": "300 Pleasant Grove Rd #465, Mt Juliet, TN 37122",
-			"time": "after dark"
+			"address1": "300 Pleasant Grove Rd #465,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Dark"
 		},
 		{
 			"imageURL": "https://geo0.ggpht.com/cbk?panoid=cOX9Rd6uwbBiuf1sr0wISw&output=thumbnail&cb_client=search.LOCAL_UNIVERSAL.gps&thumb=2&w=138&h=79&yaw=215.24762&pitch=0&thumbfov=100",
 			"name": "Tito's Playland",
-			"address": "4202, 3955 Nolensville Pike #300, Nashville, TN 37211",
-			"time": "after dark"
+			"address1": "3955 Nolensville Pike #300,",
+			"address2": "Nashville, TN 37211",
+			"time": "Dark"
 		},
 		{
 			"imageURL": "https://s3-media3.fl.yelpcdn.com/bphoto/FE_Dw-eppgoAt0XGPuK-4Q/ls.jpg",
 			"name": "Regal Cinemas",
-			"address": "401 S Mt Juliet Rd, Mt Juliet, TN 37122",
-			"time": "after dark"
+			"address1": "401 S Mt Juliet Rd,",
+			"address2": "Mt Juliet, TN 37122",
+			"time": "Dark"
 		},
 		{
 			"imageURL": "http://tasteofcountry.com/files/2018/05/Opry-Mills-Mall.jpg?w=980&q=75",
 			"name": "Opry Mills Mall",
-			"address": "433 Opry Mills Dr, Nashville, TN 37214",
-			"time": "morning"
+			"address1": "433 Opry Mills Dr,",
+			"address2": "Nashville, TN 37214",
+			"time": "Dawn"
 		}
 	]
 }

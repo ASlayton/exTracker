@@ -22,3 +22,24 @@ img {
 #location-container {
   margin-top: 40px;
 }
+
+/* BUTTON STYLING */
+#dawn-btn {
+  background-color: goldenrod;
+  color: #282912;
+}
+
+#midday-btn {
+  background-color: lightsteelblue;
+  color: #052e0c;
+}
+
+#dusk-btn {
+  background-color: darkseagreen;
+  color: darkslategray;
+}
+
+#dark-btn {
+  background-color: midnightblue;
+  color: antiquewhite;
+}
