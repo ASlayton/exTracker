@@ -1,9 +1,12 @@
 const searchFunction = () => {
+  // Found following code at: https://css-tricks.com/snippets/jquery/make-jquery-contains-case-insensitive/
+  $.extend($.expr[':'], {
+    'containsNC': function (elem, i, match, array) {
+      return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || '').toLowerCase()) >= 0;
+    },
+  });
   const myInput = $('#search-input').val();
-  $('h4:contains(' + myInput + ')').closest('.location-card').show();
-
-  // $('h4:contains(' + myInput + '), p:contains(' + myInput + '))').closest('.location-card').show();
-  // $('h4:not(:contains(' + myInput + ')), p:not(:contains(' + myInput + '))').closest('.location-card').hide();
+  $('.location-card:visible:not(:containsNC(' + myInput + '))').hide();
 };
 
 module.exports = {

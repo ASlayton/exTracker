@@ -14,34 +14,22 @@ const bindEvents = () => {
 };
 
 const dawnFilter = () => {
-  console.log('Dawn button pressed');
   $('.Dawn').show();
-  $('.Dusk').hide();
-  $('.Midday').hide();
-  $('.Dark').hide();
+  $('.Dusk, .Midday, .Dark').hide();
 };
 
 const middayFilter = () => {
-  console.log('Midday button pressed');
-  $('.Dawn').hide();
-  $('.Dusk').hide();
+  $('.Dawn, .Dusk, .Dark').hide();
   $('.Midday').show();
-  $('.Dark').hide();
 };
 
 const duskFilter = () => {
-  console.log('Dusk button pressed');
-  $('.Dawn').hide();
+  $('.Dawn, .Midday, .Dark').hide();
   $('.Dusk').show();
-  $('.Midday').hide();
-  $('.Dark').hide();
 };
 
 const darkFilter = () => {
-  console.log('Dark button pressed');
-  $('.Dawn').hide();
-  $('.Dusk').hide();
-  $('.Midday').hide();
+  $('.Dawn, .Dusk, .Midday').hide();
   $('.Dark').show();
 };
 
