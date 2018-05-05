@@ -7,6 +7,7 @@ const searchFunction = () => {
   });
   const myInput = $('#search-input').val();
   $('.location-card:visible:not(:containsNC(' + myInput + '))').hide();
+  $('#reset-btn').prop('disabled', false);
 };
 
 module.exports = {
