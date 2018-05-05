@@ -20,17 +20,16 @@ const writeEx = (data) => {
 };
 
 const writeLocations = (data) => {
-  console.log(data);
   let domString = '';
   data.forEach(element => {
     domString += `<div class="panel panel-default location-card ${element.time}">`;
     domString +=   `<div class="panel-body">`;
     domString +=     `<img src="${element.imageURL}" class="col-sm-3">`;
     domString +=     `<div class="info-container col-sm-9">`;
-    domString +=       `<h4>${element.name}<h4>`;
-    domString +=       `<p>${element.address1}</p>`;
-    domString +=       `<p>${element.address2}</p>`;
-    domString +=       `<p>${element.time}</p>`;
+    domString +=       `<h4 class='locName'>${element.name}<h4>`;
+    domString +=       `<p class='locAdd1'>${element.address1}</p>`;
+    domString +=       `<p class='locAdd2'>${element.address2}</p>`;
+    domString +=       `<p class='locTime'>${element.time}</p>`;
     domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
