@@ -1,24 +1,53 @@
-const loadEx = require('./ex');
-const loadLocations = require('./locations');
-const writeToDom = require('./dom');
-const events = require('./events');
+const dom = require('./dom');
 
-const whenExLoads = (data) => {
-  $('#ex-container').append(writeToDom.writeEx(data.ex));
+// PROMISE CONSTRUCTOR
+const exesJSON = () => {
+  return new Promise((resolve, reject) => {
+    $.get('/db/ex.JSON')
+      .done((data) => {
+        resolve(data.ex);
+      })
+      .fail((err) => {
+        reject('There has been an error.', err);
+      });
+  });
 };
 
-const whenCallFails = (error) => {
-  console.error('Error!: ', error);
+const locationJSON = () => {
+  return new Promise((resolve, reject) => {
+    $.get('/db/locations.json')
+      .done((data) => {
+        resolve(data.locations);
+      })
+      .fail((err) => {
+        reject('There has been an error.', err);
+      });
+  });
 };
 
-const whenLocationsLoad = (data) => {
-  $('#location-container').append(writeToDom.writeLocations(data.locations));
+const getAllData = () => {
+  let exes = [];
+  let locations = [];
+
+  return exesJSON()
+    .then((results) => {
+      exes = [...results,];
+      return locationJSON();
+    }).then((result2) => {
+      locations = [...result2,];
+      return Promise.resolve(exes, locations);
+    }).catch((error) => {
+      console.error('error', error);
+    });
 };
 
 const initializer = () => {
-  loadEx(whenExLoads, whenCallFails);
-  loadLocations(whenLocationsLoad, whenCallFails);
-  events.bindEvents();
+  getAllData().then((exes, locations) => {
+    dom.writeEx(exes);
+    dom.writeLocations(locations);
+  });
 };
 
-module.exports = initializer;
+module.exports = {
+  initializer,
+};

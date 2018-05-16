@@ -2,19 +2,21 @@
 
 const writeEx = (data) => {
   let domString = '';
-  domString += `<div class="panel panel-default">`;
-  domString += `<div class="panel-body">`;
-  domString +=   `<img src="${data.imageURL}" id="ex-img">`;
-  domString += `</div>`;
-  domString += `<div class="panel-footer">`;
-  domString += `<h3>Name: ${data.name}</h3>`;
-  domString += `<h3>Age: ${data.age}</h3>`;
-  domString += `<h3>Flaws:</h3>`;
-  for (let i = 0; i < data.flaws.length; i++) {
-    domString += `<p>${data.flaws[i]}</p>`;
-  };
-  domString += `</div>`;
-  domString += `</div>`;
+  data.forEach((ex) => {
+    domString += `<div class="panel panel-default">`;
+    domString += `<div class="panel-body">`;
+    domString +=   `<img src="${ex.imageURL}" id="ex-img">`;
+    domString += `</div>`;
+    domString += `<div class="panel-footer">`;
+    domString += `<h3>Name: ${ex.name}</h3>`;
+    domString += `<h3>Age: ${ex.age}</h3>`;
+    domString += `<h3>Flaws:</h3>`;
+    for (let i = 0; i < ex.flaws.length; i++) {
+      domString += `<p>${ex.flaws[i]}</p>`;
+    };
+    domString += `</div>`;
+    domString += `</div>`;
+  });
 
   return domString;
 };
