@@ -1,12 +1,86 @@
 {
-  "ex": {
-    "imageURL": "/images/tad.jpg",
-    "name": "Tad Lickspittle",
-    "age": 32,
-    "flaws": [
-      "Likes to stop walking suddenly when you are following him",
-      "Steals the covers",
-      "Wears slippers outdoors and sneakers while inside"
-    ]
-  }
+  "exes": [
+    {
+      "imageURL": "/images/tad.jpg",
+      "name": "Tad Lickspittle",
+      "age": 32,
+      "flaws": [
+        "Likes to stop walking suddenly when you are following him",
+        "Steals the covers",
+        "Wears slippers outdoors and sneakers while inside"
+      ],
+      "locFreq": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "imageURL": "/images/tad.jpg",
+      "name": "Brad",
+      "age": 33,
+      "flaws": [
+        "If he sees a button, he has to press it",
+        "Likes to quote movies- but doesn't remember the actual line",
+        "Spits when he talks"
+      ],
+      "locFreq": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "imageURL": "/images/tad.jpg",
+      "name": "Thad",
+      "age": 30,
+      "flaws": [
+        "Sports fanatic",
+        "Doesn't have an inside voice",
+        "Must have a mirror within view at all times."
+      ],
+      "locFreq": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "imageURL": "/images/tad.jpg",
+      "name": "Maurice?",
+      "age": 65,
+      "flaws": [
+        "liar",
+        "Likes prune juice",
+        "Talks with British accent- Oklahoma born and bred."
+      ],
+      "locFreq": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "imageURL": "/images/tad.jpg",
+      "name": "",
+      "age": 21,
+      "flaws": [
+        "looks much older than he is",
+        "braggart",
+        "Likes to slurp his coffee"
+      ],
+      "locFreq": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    }
+  ]
 }
