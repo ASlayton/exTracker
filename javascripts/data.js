@@ -1,9 +1,10 @@
 const dom = require('./dom');
+const events = require('./events');
 
 // PROMISE CONSTRUCTOR
 const exesJSON = () => {
   return new Promise((resolve, reject) => {
-    $.get('/db/ex.JSON')
+    $.get('../db/ex.json')
       .done((data) => {
         resolve(data.exes);
       })
@@ -15,7 +16,7 @@ const exesJSON = () => {
 
 const locationJSON = () => {
   return new Promise((resolve, reject) => {
-    $.get('/db/locations.json')
+    $.get('../db/locations.json')
       .done((data) => {
         resolve(data.locations);
       })
@@ -25,28 +26,16 @@ const locationJSON = () => {
   });
 };
 
-const getAllData = () => {
-  let exes = [];
-  let locations = [];
-
-  return exesJSON()
-    .then((results) => {
-      exes = [...results,];
-      return locationJSON();
-    }).then((result2) => {
-      locations = [...result2,];
-      return Promise.resolve(exes, locations);
-    }).catch((error) => {
-      console.error('error', error);
-    });
-};
-
 const initializer = () => {
-  getAllData().then((exes, locations) => {
-    console.log(locations);
-    dom.writeEx(exes);
-    dom.writeLocations(locations);
-  });
+  exesJSON().then((exesData) => {
+    dom.writeEx(exesData);
+    return locationJSON(); })
+    .then((locationData) => {
+      dom.writeLocations(locationData);
+    }).catch((errMsg) => {
+      console.error(errMsg);
+    });
+  events.bindEvents();
 };
 
 module.exports = {

@@ -1,6 +1,7 @@
 // WRITING TO THE DOM
 
 const writeEx = (data) => {
+  console.log(data);
   let domString = '';
   data.forEach((ex) => {
     domString += `<div class="panel panel-default">`;
@@ -18,7 +19,7 @@ const writeEx = (data) => {
     domString += `</div>`;
   });
 
-  return domString;
+  writeToDom('#ex-container', domString);
 };
 
 const writeLocations = (data) => {
@@ -37,7 +38,11 @@ const writeLocations = (data) => {
     domString += `</div>`;
   });
 
-  return domString;
+  writeToDom('#location-container', domString);
+};
+
+const writeToDom = (writeHere, myString) => {
+  $(writeHere).append(myString);
 };
 
 module.exports = {

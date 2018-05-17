@@ -19,7 +19,7 @@
       ]
     },
     {
-      "imageURL": "/images/tad.jpg",
+      "imageURL": "/images/brad.jpg",
       "name": "Brad",
       "age": 33,
       "flaws": [
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "imageURL": "/images/tad.jpg",
+      "imageURL": "/images/thad.jpg",
       "name": "Thad",
       "age": 30,
       "flaws": [
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "imageURL": "/images/tad.jpg",
+      "imageURL": "/images/maurice.jpg",
       "name": "Maurice?",
       "age": 65,
       "flaws": [
@@ -67,8 +67,8 @@
       ]
     },
     {
-      "imageURL": "/images/tad.jpg",
-      "name": "",
+      "imageURL": "/images/thom.jpg",
+      "name": "Thom",
       "age": 21,
       "flaws": [
         "looks much older than he is",
