@@ -5,7 +5,7 @@ const exesJSON = () => {
   return new Promise((resolve, reject) => {
     $.get('/db/ex.JSON')
       .done((data) => {
-        resolve(data.ex);
+        resolve(data.exes);
       })
       .fail((err) => {
         reject('There has been an error.', err);
@@ -43,6 +43,7 @@ const getAllData = () => {
 
 const initializer = () => {
   getAllData().then((exes, locations) => {
+    console.log(locations);
     dom.writeEx(exes);
     dom.writeLocations(locations);
   });
