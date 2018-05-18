@@ -10,12 +10,12 @@
         "Wears slippers outdoors and sneakers while inside"
       ],
       "locFreq": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "loc01",
+        "loc02",
+        "loc04",
+        "loc10",
+        "loc08",
+        "loc05"
       ]
     },
     {
@@ -28,11 +28,11 @@
         "Spits when he talks"
       ],
       "locFreq": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "loc12",
+        "loc10",
+        "loc03",
+        "loc06",
+        "loc05"
       ]
     },
     {
@@ -45,10 +45,10 @@
         "Must have a mirror within view at all times."
       ],
       "locFreq": [
-        "",
-        "",
-        "",
-        ""
+        "loc07",
+        "loc08",
+        "loc09",
+        "loc11"
       ]
     },
     {
@@ -61,9 +61,9 @@
         "Talks with British accent- Oklahoma born and bred."
       ],
       "locFreq": [
-        "",
-        "",
-        ""
+        "loc03",
+        "loc04",
+        "loc10"
       ]
     },
     {
@@ -76,10 +76,10 @@
         "Likes to slurp his coffee"
       ],
       "locFreq": [
-        "",
-        "",
-        "",
-        ""
+        "loc08",
+        "loc01",
+        "loc09",
+        "loc06"
       ]
     }
   ]

@@ -40,6 +40,7 @@ const darkFilter = () => {
 
 const resetPage = () => {
   $('.location-card').show();
+  $('.ex-card').show();
   $('#reset-btn').prop('disabled', true);
 };
 

@@ -26,12 +26,18 @@ const locationJSON = () => {
   });
 };
 
+let exes = [];
+let locations = [];
+
 const initializer = () => {
   exesJSON().then((exesData) => {
     dom.writeEx(exesData);
+    exes = [...exesData,];
     return locationJSON(); })
     .then((locationData) => {
+      locations = [...locationData,];
       dom.writeLocations(locationData);
+      dom.writeExesToLocations(exes, locations);
     }).catch((errMsg) => {
       console.error(errMsg);
     });

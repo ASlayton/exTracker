@@ -4,7 +4,7 @@ const writeEx = (data) => {
   console.log(data);
   let domString = '';
   data.forEach((ex) => {
-    domString += `<div class="panel panel-default">`;
+    domString += `<div class="panel panel-default ex-card">`;
     domString += `<div class="panel-body">`;
     domString +=   `<img src="${ex.imageURL}" id="ex-img">`;
     domString += `</div>`;
@@ -33,12 +33,24 @@ const writeLocations = (data) => {
     domString +=       `<p class='locAdd1'>${element.address1}</p>`;
     domString +=       `<p class='locAdd2'>${element.address2}</p>`;
     domString +=       `<p class='locTime'>${element.time}</p>`;
+    domString +=       `<p>Frequented By:</p>`;
+    domString +=       `<div class="exFreq" id="${element.locationId}"></div>`;
     domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
   });
 
   writeToDom('#location-container', domString);
+};
+
+const writeExesToLocations = (exes, locations) => {
+  locations.forEach((local) => {
+    exes.forEach((ex) => {
+      if (ex.locFreq.includes(local.locationId)) {
+        writeToDom(`#${local.locationId}`, `${ex.name}`);
+      };
+    });
+  });
 };
 
 const writeToDom = (writeHere, myString) => {
@@ -48,4 +60,5 @@ const writeToDom = (writeHere, myString) => {
 module.exports = {
   writeEx,
   writeLocations,
+  writeExesToLocations,
 };
