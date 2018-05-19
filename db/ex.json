@@ -2,7 +2,7 @@
   "exes": [
     {
       "imageURL": "/images/tad.jpg",
-      "name": "Tad Lickspittle",
+      "name": "Tad",
       "age": 32,
       "flaws": [
         "Likes to stop walking suddenly when you are following him",
@@ -53,10 +53,10 @@
     },
     {
       "imageURL": "/images/maurice.jpg",
-      "name": "Maurice?",
+      "name": "Maurice",
       "age": 65,
       "flaws": [
-        "liar",
+        "Pathalogical liar",
         "Likes prune juice",
         "Talks with British accent- Oklahoma born and bred."
       ],

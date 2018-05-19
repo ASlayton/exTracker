@@ -5,6 +5,7 @@ const searchFunction = () => {
       return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || '').toLowerCase()) >= 0;
     },
   });
+
   const myInput = $('#search-input').val();
   $('.location-card:visible:not(:containsNC(' + myInput + '))').hide();
   $('.ex-card:visible:not(:containsNC(' + myInput + '))').hide();
