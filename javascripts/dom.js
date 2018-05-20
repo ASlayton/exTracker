@@ -5,7 +5,7 @@ const printToDom = (myString, myContainer) => {
 const writeExes = (exes) => {
   let domString = '';
   exes.forEach((ex) => {
-    domString += `<div class="panel panel-default ex-card">`;
+    domString += `<div class="panel panel-default ex-card" id="${ex.id}">`;
     domString += `<div class="panel-body">`;
     domString += `<img src="${ex.imageURL}">`;
     domString += `</div>`;
@@ -18,14 +18,13 @@ const writeExes = (exes) => {
     domString += `</div>`;
     domString += `</div>`;
   });
-
   printToDom(`${domString}`, '#ex-container');
 };
 
 const writeLocations = (locations) => {
   let domString = '';
   locations.forEach((loc) => {
-    domString += `<div class="panel panel-default location-card ${loc.time}">`;
+    domString += `<div class="panel panel-default location-card ${loc.time}" id="${loc.locationId}-container">`;
     domString +=   `<div class="panel-body">`;
     domString +=     `<div class="col-sm-6">`;
     domString +=       `<img src="${loc.imageURL}">`;
@@ -55,8 +54,37 @@ const writeExToLoc = (exes, locations) => {
   });
 };
 
+const writeSingleCard = (elementId, exData, locationData) => {
+  const myEx = exData;
+  let domString = '';
+  myEx.forEach((ex) => {
+    if (elementId === ex.id) {
+      domString += `<div class="panel panel-default ex-card" id="${ex.id}">`;
+      domString += `<div class="panel-body">`;
+      domString += `<img src="${ex.imageURL}">`;
+      domString += `</div>`;
+      domString += `<div class="panel-footer">`;
+      domString += `<p>${ex.name}</p>`;
+      domString += `<p>Age: ${ex.age}</p>`;
+      ex.flaws.forEach((flaw) => {
+        domString += `<p>${flaw}</p>`;
+      });
+      domString += `</div>`;
+      domString += `</div>`;
+      locationData.forEach((loc) => {
+        if (ex.locFreq.includes(loc.locationId)) {
+        } else {
+          $(`#${loc.locationId}-container`).hide();
+        };
+      });
+    };
+  });
+  $('#ex-container').html(domString);
+};
+
 module.exports = {
   writeExes,
   writeLocations,
   writeExToLoc,
+  writeSingleCard,
 };
