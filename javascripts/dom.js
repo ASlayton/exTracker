@@ -1,44 +1,62 @@
-// WRITING TO THE DOM
-
-const writeEx = (data) => {
-  let domString = '';
-  domString += `<div class="panel panel-default">`;
-  domString += `<div class="panel-body">`;
-  domString +=   `<img src="${data.imageURL}" id="ex-img">`;
-  domString += `</div>`;
-  domString += `<div class="panel-footer">`;
-  domString += `<h3>Name: ${data.name}</h3>`;
-  domString += `<h3>Age: ${data.age}</h3>`;
-  domString += `<h3>Flaws:</h3>`;
-  for (let i = 0; i < data.flaws.length; i++) {
-    domString += `<p>${data.flaws[i]}</p>`;
-  };
-  domString += `</div>`;
-  domString += `</div>`;
-
-  return domString;
+const printToDom = (myString, myContainer) => {
+  $(myContainer).html(myString);
 };
 
-const writeLocations = (data) => {
+const writeExes = (exes) => {
   let domString = '';
-  data.forEach(element => {
-    domString += `<div class="panel panel-default location-card ${element.time}">`;
+  exes.forEach((ex) => {
+    domString += `<div class="panel panel-default ex-card">`;
+    domString += `<div class="panel-body">`;
+    domString += `<img src="${ex.imageURL}">`;
+    domString += `</div>`;
+    domString += `<div class="panel-footer">`;
+    domString += `<p>${ex.name}</p>`;
+    domString += `<p>Age: ${ex.age}</p>`;
+    ex.flaws.forEach((flaw) => {
+      domString += `<p>${flaw}</p>`;
+    });
+    domString += `</div>`;
+    domString += `</div>`;
+  });
+
+  printToDom(`${domString}`, '#ex-container');
+};
+
+const writeLocations = (locations) => {
+  let domString = '';
+  locations.forEach((loc) => {
+    domString += `<div class="panel panel-default location-card ${loc.time}">`;
     domString +=   `<div class="panel-body">`;
-    domString +=     `<img src="${element.imageURL}" class="col-sm-3">`;
-    domString +=     `<div class="info-container col-sm-9">`;
-    domString +=       `<h4 class='locName'>${element.name}<h4>`;
-    domString +=       `<p class='locAdd1'>${element.address1}</p>`;
-    domString +=       `<p class='locAdd2'>${element.address2}</p>`;
-    domString +=       `<p class='locTime'>${element.time}</p>`;
+    domString +=     `<div class="col-sm-6">`;
+    domString +=       `<img src="${loc.imageURL}">`;
+    domString +=     `</div>`;
+    domString +=     `<div class="col-sm-6">`;
+    domString +=       `<p>${loc.name}</p>`;
+    domString +=       `<p>${loc.address1}</p>`;
+    domString +=       `<p>${loc.address2}</p>`;
+    domString +=       `<p>${loc.time}</p>`;
+    domString +=       `<p>Frequented By:</p>`;
+    domString +=       `<div id="${loc.locationId}">`;
+    domString +=       `</div>`;
     domString +=     `</div>`;
     domString +=   `</div>`;
     domString += `</div>`;
   });
+  printToDom(domString, '#location-container');
+};
 
-  return domString;
+const writeExToLoc = (exes, locations) => {
+  exes.forEach((ex) => {
+    locations.forEach((loc) => {
+      if (ex.locFreq.includes(loc.locationId)) {
+        $(`#${loc.locationId}`).append(`<p>${ex.name}</p>`);
+      };
+    });
+  });
 };
 
 module.exports = {
-  writeEx,
+  writeExes,
   writeLocations,
+  writeExToLoc,
 };

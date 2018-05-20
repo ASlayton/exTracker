@@ -1,22 +1,10 @@
 body {
-  background-color: aliceblue;
-}
-#ex-img {
-
+  background-image: url(/images/dirt.jpg);
 }
 
 img {
+  height: 250px;
   width: 100%;
-  border-radius: 10px;
-}
-
-.location-card > div > img {
-  height: 100px;
-}
-
-#filter-button-container {
-  margin-bottom: 10px;
-  clear: both;
 }
 
 #location-container {

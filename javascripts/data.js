@@ -1,24 +1,63 @@
-const loadEx = require('./ex');
-const loadLocations = require('./locations');
-const writeToDom = require('./dom');
 const events = require('./events');
+const dom = require('./dom');
 
-const whenExLoads = (data) => {
-  $('#ex-container').append(writeToDom.writeEx(data.ex));
+let exes = [];
+let locations = [];
+
+const getExes = () => {
+  return exes;
 };
 
-const whenCallFails = (error) => {
-  console.error('Error!: ', error);
+const getLocations = () => {
+  return locations;
 };
 
-const whenLocationsLoad = (data) => {
-  $('#location-container').append(writeToDom.writeLocations(data.locations));
+const exJSON = () => {
+  return new Promise((resolve, reject) => {
+    $.get('/db/ex.json')
+      .done((data) => {
+        resolve(data.exes);
+      })
+      .fail((err) => {
+        reject(err);
+      });
+  });
+};
+
+const locationJSON = () => {
+  return new Promise((resolve, reject) => {
+    $.get('/db/locations.json')
+      .done((data) => {
+        resolve(data.locations);
+      })
+      .fail((err) => {
+        reject(err);
+      });
+  });
+};
+
+const getAllData = () => {
+  return Promise.all([exJSON(), locationJSON(),])
+    .then((results) => {
+      exes = results[0];
+      locations = results[1];
+      dom.writeExes(exes);
+      dom.writeLocations(locations);
+      dom.writeExToLoc(exes, locations);
+    })
+    .catch((err) => {
+      console.error('Errors happened.', err);
+    });
 };
 
 const initializer = () => {
-  loadEx(whenExLoads, whenCallFails);
-  loadLocations(whenLocationsLoad, whenCallFails);
+  getAllData();
   events.bindEvents();
 };
 
-module.exports = initializer;
+module.exports = {
+  initializer,
+  getExes,
+  getLocations,
+  getAllData,
+};

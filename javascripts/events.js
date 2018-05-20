@@ -1,22 +1,27 @@
 const search = require('./search');
 
 const bindEvents = () => {
-  $('#search-input').keypress(function (e) {
+  $('#search-input').on('keypress', (e) => {
     if (e.which === 13) {
       search.searchFunction();
     };
   });
-
   $('#dawn-btn').on('click', dawnFilter);
   $('#midday-btn').on('click', middayFilter);
   $('#dusk-btn').on('click', duskFilter);
   $('#dark-btn').on('click', darkFilter);
-  $('#reset-btn').on('click', resetPage);
+  $('#reset-btn').on('click', resetBtn);
+};
+
+const resetBtn = () => {
+  $('.location-card, .ex-card').show();
+  $('#reset-btn').prop('disabled', true);
 };
 
 const dawnFilter = () => {
+  console.log('here!');
   $('.Dawn').show();
-  $('.Dusk, .Midday, .Dark').hide();
+  $('.Midday, .Dusk, .Dark').hide();
   $('#reset-btn').prop('disabled', false);
 };
 
@@ -33,14 +38,9 @@ const duskFilter = () => {
 };
 
 const darkFilter = () => {
-  $('.Dawn, .Dusk, .Midday').hide();
+  $('.Dawn, .Midday, .Dusk').hide();
   $('.Dark').show();
   $('#reset-btn').prop('disabled', false);
-};
-
-const resetPage = () => {
-  $('.location-card').show();
-  $('#reset-btn').prop('disabled', true);
 };
 
 module.exports = {
