@@ -44,6 +44,7 @@ const getAllData = () => {
       dom.writeExes(exes);
       dom.writeLocations(locations);
       dom.writeExToLoc(exes, locations);
+      events.bindEvents(exes, locations);
     })
     .catch((err) => {
       console.error('Errors happened.', err);
@@ -52,7 +53,6 @@ const getAllData = () => {
 
 const initializer = () => {
   getAllData();
-  events.bindEvents();
 };
 
 module.exports = {
