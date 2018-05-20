@@ -1,19 +1,10 @@
 body {
-  background-image: URL(https://c.pxhere.com/photos/85/c6/grass_rush_juicy_green_blades_of_grass_halme_meadow_close-957484.jpg!d);
+  background-image: url(/images/dirt.jpg);
 }
 
 img {
+  height: 250px;
   width: 100%;
-  border-radius: 10px;
-}
-
-.location-card > div > img {
-  height: 100px;
-}
-
-#filter-button-container {
-  margin-bottom: 10px;
-  clear: both;
 }
 
 #location-container {

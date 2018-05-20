@@ -1,39 +1,46 @@
 const search = require('./search');
 
 const bindEvents = () => {
-  $('#search-input').on('keypress', search);
+  $('#search-input').on('keypress', (e) => {
+    if (e.which === 13) {
+      search.searchFunction();
+    };
+  });
   $('#dawn-btn').on('click', dawnFilter);
   $('#midday-btn').on('click', middayFilter);
   $('#dusk-btn').on('click', duskFilter);
   $('#dark-btn').on('click', darkFilter);
+  $('#reset-btn').on('click', resetBtn);
+};
+
+const resetBtn = () => {
+  $('.location-card, .ex-card').show();
+  $('#reset-btn').prop('disabled', true);
 };
 
 const dawnFilter = () => {
-  $('.dawn').show;
-  $('.midday').hide;
-  $('.dusk').hide;
-  $('.dark').hide;
+  console.log('here!');
+  $('.Dawn').show();
+  $('.Midday, .Dusk, .Dark').hide();
+  $('#reset-btn').prop('disabled', false);
 };
 
 const middayFilter = () => {
-  $('.dawn').hide;
-  $('.midday').show;
-  $('.dusk').hide;
-  $('.dark').hide;
+  $('.Dawn, .Dusk, .Dark').hide();
+  $('.Midday').show();
+  $('#reset-btn').prop('disabled', false);
 };
 
 const duskFilter = () => {
-  $('.dawn').hide;
-  $('.midday').hide;
-  $('.dusk').show;
-  $('.dark').hide;
+  $('.Dawn, .Midday, .Dark').hide();
+  $('.Dusk').show();
+  $('#reset-btn').prop('disabled', false);
 };
 
 const darkFilter = () => {
-  $('.dawn').hide;
-  $('.midday').hide;
-  $('.dusk').hide;
-  $('.dark').show;
+  $('.Dawn, .Midday, .Dusk').hide();
+  $('.Dark').show();
+  $('#reset-btn').prop('disabled', false);
 };
 
 module.exports = {

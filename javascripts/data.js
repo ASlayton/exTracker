@@ -59,4 +59,5 @@ module.exports = {
   initializer,
   getExes,
   getLocations,
+  getAllData,
 };
