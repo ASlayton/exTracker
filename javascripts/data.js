@@ -45,10 +45,16 @@ const getAllData = () => {
       dom.writeLocations(locations);
       dom.writeExToLoc(exes, locations);
       events.bindEvents(exes, locations);
+      $('#reset-btn').on('click', resetBtn);
     })
     .catch((err) => {
       console.error('Errors happened.', err);
     });
+};
+
+const resetBtn = (exData, locationData) => {
+  getAllData();
+  $('#reset-btn').prop('disabled', true);
 };
 
 const initializer = () => {

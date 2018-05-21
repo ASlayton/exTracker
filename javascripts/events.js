@@ -11,21 +11,11 @@ const bindEvents = (exData, locationData) => {
   $('#midday-btn').on('click', middayFilter);
   $('#dusk-btn').on('click', duskFilter);
   $('#dark-btn').on('click', darkFilter);
-  $('#reset-btn').on('click', (exData, locationData) => {
-    resetBtn(exData, locationData);
-  });
   $('#ex-container').click((e) => {
     const myID = e.target.closest('.ex-card').id;
     dom.writeSingleCard(myID, exData, locationData);
     $('#reset-btn').prop('disabled', false);
   });
-};
-
-const resetBtn = (exData, locationData) => {
-  dom.writeExes(exData);
-  dom.writeLocations(locationData);
-  dom.writeExToLoc(exData, locationData);
-  $('#reset-btn').prop('disabled', true);
 };
 
 const dawnFilter = () => {
